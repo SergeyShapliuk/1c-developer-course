@@ -80,7 +80,7 @@ rg -n -i 'РегистрСведений|РегистрНакопления|ре
 Check that no practice of lessons 26–52 uses queries or the data composition system:
 
 ```powershell
-rg -n -i 'ВЫБРАТЬ |Новый Запрос|СхемаКомпоновки|ВиртуальнаяТаблица' --glob '2[6-9]-*/practice.md' --glob '[34][0-9]-*/practice.md' --glob '5[0-2]-*/practice.md'
+rg -n 'ВЫБРАТЬ |Новый Запрос|СхемаКомпоновки|ВиртуальнаяТаблица' --glob '2[6-9]-*/practice.md' --glob '[34][0-9]-*/practice.md' --glob '5[0-2]-*/practice.md'
 ```
 
 Check that no practice of lessons 53–68 leaks a stage 6–8 topic:
