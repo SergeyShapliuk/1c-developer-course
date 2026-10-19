@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a Russian-language Markdown course for 1С development. The root [README.md](README.md) contains the course overview and the lesson program of roughly 120 lessons, grouped into 10 stages. Lessons 1–80 are filled; later stages exist only as a roadmap.
+This repository is a Russian-language Markdown course for 1С development. The root [README.md](README.md) contains the course overview and the lesson program of roughly 120 lessons, grouped into 10 stages. Lessons 1–90 are filled; later stages exist only as a roadmap.
 
 Each written lesson uses its own numbered directory, for example `01-platform/` or `25-mini-project/`, containing exactly:
 
@@ -10,7 +10,7 @@ Each written lesson uses its own numbered directory, for example `01-platform/` 
 - `theory.md` — concepts and terminology;
 - `practice.md` — beginner-friendly steps, result check, and final control questions.
 
-Do not create directories for lessons 81 and later until the lesson is requested. There is currently no application source code, generated asset directory, or automated test suite.
+Do not create directories for lessons 91 and later until the lesson is requested. There is currently no application source code, generated asset directory, or automated test suite.
 
 ## Content and Naming Conventions
 
@@ -35,15 +35,15 @@ Put `## Контрольные вопросы` at the end of every `practice.md`
 5. `## Типичные ошибки`
 6. `## Разбор и эталонный вариант`
 
-**Disclosed-concepts rule.** The practice of lesson N may use only concepts explained in lessons 1..N. Documents, tabular sections, registers, posting, movements, queries, and the data composition system must not appear in the practices of lessons 1–25 at all — those topics belong to stages 3–6. Registers, posting and movements must not appear in the practices of lessons 26–38 either: stage 3 is documents only. Queries, temporary tables, register virtual tables and the data composition system must not appear anywhere in lessons 26–52 — balances in stage 4 are checked through the register’s standard list form, never a query. Stage 5 (53–68) introduces the query language one construct at a time: the practice of lesson N uses only query constructs introduced in lessons 53..N, and register virtual tables start at lesson 64. The data composition system, reports, templates, event subscriptions and roles must not appear in the practices of lessons 53–68. Stage 6 (69–80) introduces reports and the data composition system one capability at a time: the practice of lesson N uses only capabilities introduced in lessons 69..N, and report code (`ПриКомпоновкеРезультата`, the template composer and composition processors) starts at lesson 79. Tabular-document templates and print forms (`ПолучитьМакет`, `ПолучитьОбласть`), event subscriptions and roles must not appear in the practices of lessons 69–80; report code reaches its schema through the report object's `СхемаКомпоновкиДанных` property.
+**Disclosed-concepts rule.** The practice of lesson N may use only concepts explained in lessons 1..N. Documents, tabular sections, registers, posting, movements, queries, and the data composition system must not appear in the practices of lessons 1–25 at all — those topics belong to stages 3–6. Registers, posting and movements must not appear in the practices of lessons 26–38 either: stage 3 is documents only. Queries, temporary tables, register virtual tables and the data composition system must not appear anywhere in lessons 26–52 — balances in stage 4 are checked through the register’s standard list form, never a query. Stage 5 (53–68) introduces the query language one construct at a time: the practice of lesson N uses only query constructs introduced in lessons 53..N, and register virtual tables start at lesson 64. The data composition system, reports, templates, event subscriptions and roles must not appear in the practices of lessons 53–68. Stage 6 (69–80) introduces reports and the data composition system one capability at a time: the practice of lesson N uses only capabilities introduced in lessons 69..N, and report code (`ПриКомпоновкеРезультата`, the template composer and composition processors) starts at lesson 79. Tabular-document templates and print forms (`ПолучитьМакет`, `ПолучитьОбласть`), event subscriptions and roles must not appear in the practices of lessons 69–80; report code reaches its schema through the report object's `СхемаКомпоновкиДанных` property. Stage 7 (81–90) introduces form behavior and print forms one mechanism at a time: the practice of lesson N uses only form and printing mechanisms introduced in lessons 81..N, and tabular-document templates and print forms (`ПолучитьМакет`, `ПолучитьОбласть`, `ТабличныйДокумент`) start at lesson 87. Roles, access rights, event subscriptions and configuration extensions must not appear in the practices of lessons 81–90 — they belong to stage 8. Dialogs are non-modal only: `ПоказатьВопрос` with `ОписаниеОповещения`, never `Вопрос(` or `Предупреждение(`.
 
 ## Lessons 26 and Later: Applied Standard
 
-From lesson 26 the course stops teaching isolated mechanisms and builds one continuous project story. Stage 3 (26–38) is documents; stage 4 (39–52) is registers and posting; stage 5 (53–68) is the query language; stage 6 (69–80) is reports and the data composition system. By lesson 38 the chain «Заявка → ввод на основании → Поступление» works; by lesson 52 the chain «Поступление → проведение → движения → остаток» works; by lesson 68 the balance is obtained by a query, and a transfer beyond the balance is not posted; by lesson 80 the supply summary of lesson 68 is a DCS report the user opens from **Логистика**, configures without a developer, and reconciles with the lesson 68 function.
+From lesson 26 the course stops teaching isolated mechanisms and builds one continuous project story. Stage 3 (26–38) is documents; stage 4 (39–52) is registers and posting; stage 5 (53–68) is the query language; stage 6 (69–80) is reports and the data composition system; stage 7 (81–90) is forms, interface and print forms. By lesson 38 the chain «Заявка → ввод на основании → Поступление» works; by lesson 52 the chain «Поступление → проведение → движения → остаток» works; by lesson 68 the balance is obtained by a query, and a transfer beyond the balance is not posted; by lesson 80 the supply summary of lesson 68 is a DCS report the user opens from **Логистика**, configures without a developer, and reconciles with the lesson 68 function; by lesson 90 the documents have journals that show and highlight what matters, forms that offer only allowed actions and values, and print forms — request, waybill, receipt order — printed from the form and from the journal, one document or a batch.
 
-1. **Five questions per lesson.** Every lesson of stages 3–6 answers: which business problem we solve; which 1С mechanism that needs; where the logic belongs; what changes in our system; how to verify the solution really works. A `theory.md` opens with the business problem, never with the name of a mechanism.
+1. **Five questions per lesson.** Every lesson of stages 3–7 answers: which business problem we solve; which 1С mechanism that needs; where the logic belongs; what changes in our system; how to verify the solution really works. A `theory.md` opens with the business problem, never with the name of a mechanism.
 2. **Task before interface.** Never open a lesson with a configurator path. State the project's need, then ask which metadata object fits, and only then give the path **Конфигурация → Документы → Добавить**.
-3. **One continuous scenario.** Each practice extends the same configuration instead of inventing a throwaway example. Scenario objects: `ЗаявкаНаМатериалы`, `ПоступлениеМатериалов`, `ПередачаМатериалов`, `ЦеныМатериалов`, `ОстаткиМатериалов`; from stage 6 also the reports `ОстаткиНаСкладах`, `ОборотнаяВедомостьМатериалов`, `ВыдачаПоОбъектам`, `ОбеспечениеОбъектов`. Report names intentionally differ from register names.
+3. **One continuous scenario.** Each practice extends the same configuration instead of inventing a throwaway example. Scenario objects: `ЗаявкаНаМатериалы`, `ПоступлениеМатериалов`, `ПередачаМатериалов`, `ЦеныМатериалов`, `ОстаткиМатериалов`; from stage 6 also the reports `ОстаткиНаСкладах`, `ОборотнаяВедомостьМатериалов`, `ВыдачаПоОбъектам`, `ОбеспечениеОбъектов`; from stage 7 also the processing `ПанельСнабженца`, the list forms of `ЗаявкаНаМатериалы` and `ПоступлениеМатериалов`, and the templates `ПФ_Заявка`, `ПФ_Накладная`, `ПФ_ПриходныйОрдер`. Report names intentionally differ from register names.
 4. **One architectural question.** Every practice includes at least one control question about placing logic: form module, object module or common module; client or server.
 5. **20/80 proportion.** Keep new BSL constructs to a minimum; spend the lesson on the platform mechanism and on why the logic lives exactly there.
 6. **Materials live in `Товары`.** There is no `Номенклатура` catalog: the tabular section `Материалы` references the catalog `Товары` created in lesson 6. Do not rename it.
@@ -95,6 +95,16 @@ Check that no practice of lessons 69–80 leaks a stage 7–8 topic, and that re
 rg -n -i 'ПолучитьМакет|ПолучитьОбласть|ПодпискаНаСобытие|РольДоступна|ПравоДоступа' --glob '69-*/practice.md' --glob '7[0-9]-*/practice.md' --glob '80-*/practice.md'
 rg -n 'ПриКомпоновкеРезультата|КомпоновщикМакета|ПроцессорКомпоновки' --glob '69-*/practice.md' --glob '7[0-8]-*/practice.md'
 ```
+
+Check that no practice of lessons 81–90 leaks a stage 8 topic or a modal dialog, and that templates do not appear before lesson 87:
+
+```powershell
+rg -n -i 'РольДоступна|ПравоДоступа|ПодпискаНаСобытие|Расширени' --glob '8[1-9]-*/practice.md' --glob '90-*/practice.md'
+rg -n '\bВопрос\(|\bПредупреждение\(' --glob '8[1-9]-*/practice.md' --glob '90-*/practice.md'
+rg -n 'ПолучитьМакет|ПолучитьОбласть|ТабличныйДокумент' --glob '8[1-6]-*/practice.md'
+```
+
+In the second command, the only acceptable hit is the lesson 83 sentence that names the forbidden modal call; confirm it by eye.
 
 Confirm every practice still ends with its control questions:
 
