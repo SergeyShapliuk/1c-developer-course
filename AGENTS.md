@@ -12,6 +12,13 @@ Each written lesson uses its own numbered directory, for example `01-platform/` 
 
 Do not create directories for lessons 121 and later unless the user explicitly requests new lessons. There is currently no application source code, generated asset directory, or automated test suite.
 
+The root also holds [interview-questions.md](interview-questions.md), the interview question bank linked from lesson 119 and the root README. It is a reference, not a lesson: it has no `README.md`/`theory.md`/`practice.md` split and no `## Контрольные вопросы`. Keep it consistent with the course:
+
+- Part 1 ("Темы курса") states only facts taught in the lessons it links; when a lesson changes a fact the bank cites, update the bank in the same commit.
+- The 20 questions of step 1 in `119-technical-interview/practice.md` appear in Part 1 word for word; change them in both places together.
+- Part 2 ("Вне курса") covers topics the course does not teach. A thesis checked against an open ITS development standard names that standard; the part's introduction says which theses are not verified against a primary source. Do not present an unverified platform detail as checked.
+- Questions are numbered continuously across parts; renumber when inserting.
+
 ## Content and Naming Conventions
 
 Write in clear Russian for readers with no 1С experience. Introduce a term before using it, explain both the action and its purpose, and give exact UI paths such as **Конфигурация → Обновить конфигурацию базы данных**. Write keys in backticks: `F5`, `F7`, `F9`, `F11`.
